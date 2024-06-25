@@ -1,4 +1,4 @@
-# Project ES6 Basics
+# Project #0
 
 ## Concepts
 For this project, we expect you to explore the following concepts:
