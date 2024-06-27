@@ -1,6 +1,23 @@
-import SkyHighBuilding from './6-sky_high';
+import Building from './5-building';
 
-const building = new SkyHighBuilding(140, 60);
-console.log(building.sqft);
-console.log(building.floors);
-console.log(building.evacuationWarningMessage());
+export default class SkyHighBuilding extends Building {
+  constructor(sqft, floors) {
+    super(sqft);
+    this.floors = floors;
+  }
+
+  get floors() {
+    return this._floors;
+  }
+
+  set floors(newFloors) {
+    if (typeof newFloors !== 'number') {
+      throw TypeError('Floors must be a number');
+    }
+    this._floors = newFloors;
+  }
+
+  evacuationWarningMessage() {
+    return `Evacuate slowly the ${this._floors} floors`;
+  }
+}
