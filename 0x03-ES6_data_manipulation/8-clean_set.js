@@ -1,9 +1,10 @@
-export default function groceriesList() {
-  return new Map([
-    ['Apples', 10],
-    ['Tomatoes', 10],
-    ['Pasta', 1],
-    ['Rice', 1],
-    ['Banana', 5],
-  ]);
+export default function cleanSet(set, startString) {
+  if (!startString || !startString.length || typeof startString !== 'string') return '';
+
+  let finalString = '';
+  set.forEach((element) => {
+    if (element && element.startsWith(startString)) finalString += `${element.slice(startString.length)}-`;
+  });
+
+  return finalString.slice(0, finalString.length - 1);
 }
